@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+nav{
+  z-index: 1001 !important;
+}
+
+
+
