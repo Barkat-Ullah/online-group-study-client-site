@@ -164,12 +164,12 @@ const Create = () => {
   return (
     <div>
       <div className="my-10">
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen ">
           <div className="hero-content space-x-10 flex-col lg:flex-row">
             <div className="text-center lg:text-left">
               <img
                 className="h-[400px] w-full rounded-lg"
-                src="https://i.ibb.co/hKY5gbh/pexels-armin-rimoldi-5553724.jpg"
+                src="https://i.ibb.co/McLxN16/article-comunication-boss.jpg"
                 alt=""
               />
             </div>

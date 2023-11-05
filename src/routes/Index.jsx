@@ -7,6 +7,7 @@ import Register from "../pages/Register";
 import Assignment from "../pages/Assignment";
 import Create from "../pages/Create";
 import Details from "../pages/Details";
+import Update from "../pages/Update";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
             {
                 path:'/details/:id',
                 element:<Details></Details>,
+                loader:({params}) => fetch(`http://localhost:5000/assignments/${params.id}`)
+            },
+            {
+                path: '/update/:id',
+                element:<Update></Update>,
                 loader:({params}) => fetch(`http://localhost:5000/assignments/${params.id}`)
             },
             {
