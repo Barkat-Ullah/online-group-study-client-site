@@ -5,8 +5,7 @@
     //   {/* <h2 className="text-center font-bold text-4xl text-primary">Create Assignment</h2> */}
 //         <div className="hero min-h-screen bg-base-200">
 
-import { useContext } from "react";
-import { AuthContext } from "../provider/AuthProvider/AuthProvider";
+
 
       
 //           <div className="hero-content space-x-10 flex-col lg:flex-row">
@@ -122,7 +121,10 @@ import { AuthContext } from "../provider/AuthProvider/AuthProvider";
 // };
 
 // export default Create;
-
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider/AuthProvider";
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const Create = () => {
     const {user} = useContext(AuthContext)
@@ -141,8 +143,23 @@ const Create = () => {
       description:formData.get('description')
     };
 
-    console.log(assignmentData);
+    axios
+      .post("http://localhost:5000/assignments", assignmentData)
+      .then((res) => {
+        console.log(res.data)
+        if(res.data.insertedId){
+            Swal.fire({
+                title: 'Success!',
+                text: 'Item successfully added',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+        }
+      });
+
+ 
   }
+
 
   return (
     <div>
@@ -215,7 +232,7 @@ const Create = () => {
                   <input
                     type="submit"
                     value="Create Assignment"
-                    className="btn btn-primary"
+                    className="btn bg-gradient-to-r from-sky-400 to-blue-500 hover:from-blue-500 hover:to-sky-500 transition delay-150, duration-700, ease-in-out text-white"
                   />
                 </div>
               </form>
