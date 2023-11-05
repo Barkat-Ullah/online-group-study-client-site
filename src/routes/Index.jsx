@@ -4,6 +4,8 @@ import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import Assignment from "../pages/Assignment";
+import Create from "../pages/Create";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +15,14 @@ const router = createBrowserRouter([
             {
                 path:'about',
                 element:<About></About>
+            },
+            {
+                path:'assignment',
+                element:<Assignment></Assignment>
+            },
+            {
+                path:'create',
+                element:<Create></Create>
             },
             {
                 path:'contact',
