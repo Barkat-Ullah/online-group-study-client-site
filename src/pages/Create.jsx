@@ -180,6 +180,7 @@ const Create = () => {
                   <input
                     type="text"
                     name="title"
+                  
                     placeholder="Assignment Name"
                     className="input input-bordered"
                     required
@@ -194,9 +195,9 @@ const Create = () => {
                     <option  value="" disabled>
                       Assignment Level
                     </option>
-                    <option value="Easy">Easy</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Hard">Hard</option>
+                    <option value="easy">easy</option>
+                    <option value="medium">medium</option>
+                    <option value="hard">hard</option>
                   </select>
                 </div>
                 <div className="form-control">

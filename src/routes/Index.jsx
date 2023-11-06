@@ -8,6 +8,7 @@ import Assignment from "../pages/Assignment";
 import Create from "../pages/Create";
 import Details from "../pages/Details";
 import Update from "../pages/Update";
+import MyAssignments from "../pages/MyAssignments";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
                 path:'assignment',
                 element:<Assignment></Assignment>,
               
+            },
+            {
+                path:'myAssignment',
+                element:<MyAssignments></MyAssignments>,
+                loader:() => fetch('http://localhost:5000/assignments')
             },
             {
                 path:'/details/:id',

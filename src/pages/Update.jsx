@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const Update = () => {
   const updateAssign = useLoaderData();
 
-  const {title, level, marks, image, date, description} = updateAssign
+  const { _id,title, level, marks, image, date, description} = updateAssign
   console.log(updateAssign);
 
   const handleSubmit = (event) => {
@@ -24,13 +24,13 @@ const Update = () => {
     };
 
     axios
-      .post("http://localhost:5000/assignments", assignmentData)
+      .put(`http://localhost:5000/assignments/${_id}`, assignmentData)
       .then((res) => {
         console.log(res.data);
-        if (res.data.insertedId) {
+        if (res.data.modifiedCount > 0) {
           Swal.fire({
             title: "Success!",
-            text: "Item successfully added",
+            text: "Item successfully Updated",
             icon: "success",
             confirmButtonText: "Cool",
           });
@@ -58,6 +58,7 @@ const Update = () => {
                   <input
                     type="text"
                     name="title"
+                    defaultValue={title}
                     placeholder="Assignment Name"
                     className="input input-bordered"
                     required
@@ -66,21 +67,23 @@ const Update = () => {
                 <div className="form-control">
                   <select
                     name="level"
+                    defaultValue={level}
                     className="select select-bordered w-full max-w-xs"
                     required
                   >
                     <option value="" disabled>
                       Assignment Level
                     </option>
-                    <option value="Easy">Easy</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Hard">Hard</option>
+                    <option value="easy">easy</option>
+                    <option value="medium">medium</option>
+                    <option value="hard">hard</option>
                   </select>
                 </div>
                 <div className="form-control">
                   <input
                     type="text"
                     name="marks"
+                    defaultValue={marks}
                     placeholder="Assignment Marks"
                     className="input input-bordered"
                     required
@@ -90,6 +93,7 @@ const Update = () => {
                   <input
                     type="text"
                     name="image"
+                    defaultValue={image}
                     placeholder="Photo URL of Assignment"
                     className="input input-bordered"
                     required
@@ -99,6 +103,7 @@ const Update = () => {
                   <input
                     type="date"
                     name="date"
+                    defaultValue={date}
                     className="input input-bordered"
                     required
                   />
@@ -106,6 +111,7 @@ const Update = () => {
                 <div className="form-control">
                   <textarea
                     name="description"
+                    defaultValue={description}
                     className="textarea textarea-bordered"
                     placeholder="description"
                   ></textarea>
