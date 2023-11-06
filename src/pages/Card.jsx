@@ -42,7 +42,7 @@ const Card = ({ card, removes, setRemoves }) => {
     
 
     <div>
-      <div className="overflow-hidden h-full bg-white rounded shadow-md text-slate-500 shadow-slate-200">
+      <div className="overflow-hidden h-full bg-white rounded shadow-md text-slate-500 shadow-slate-200  ">
         <figure>
           <img
             src={image}
@@ -51,7 +51,7 @@ const Card = ({ card, removes, setRemoves }) => {
           />
         </figure>
 
-        <div className="p-6">
+        <div className="p-6 flex flex-col flex-grow">
           <header className="mb-4">
             <h3 className="text-xl font-medium text-slate-700">
               {title}

@@ -25,22 +25,22 @@ const Navbar = () => {
 
         <li>
           <NavLink
-            to="/about"
+            to="/"
             className={({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "text-[#5eb6c5]" : ""
             }
           >
-            About
+            Home
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/assignment"
+            to="/allAssignment"
             className={({ isActive, isPending }) =>
               isPending ? "pending" : isActive ? "text-[#5eb6c5]" : ""
             }
           >
-            Assignment
+           Assignments
           </NavLink>
         </li>
 

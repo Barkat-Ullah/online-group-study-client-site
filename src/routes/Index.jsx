@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import About from "../pages/About";
+// import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -9,6 +9,8 @@ import Create from "../pages/Create";
 import Details from "../pages/Details";
 import Update from "../pages/Update";
 import MyAssignments from "../pages/MyAssignments";
+import Home from "../pages/Home";
+import AllAssignments from "../pages/AllAssignments";
 
 const router = createBrowserRouter([
     {
@@ -16,14 +18,19 @@ const router = createBrowserRouter([
         element:<App/>,
         children:[
             {
-                path:'about',
-                element:<About></About>,
+                path:'/',
+                element:<Home></Home>,
                 loader:() => fetch('http://localhost:5000/assignments')
+                
+            },
+            {
+                path:'allAssignment',
+                element:<AllAssignments></AllAssignments>
             },
             {
                 path:'assignment',
                 element:<Assignment></Assignment>,
-              
+               
             },
             {
                 path:'myAssignment',

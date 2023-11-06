@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 const SingleAssignment = ({ assign }) => {
   const { _id, title, level, marks, image, date, description } = assign || "";
   console.log(assign);
-  console.log(assign);
+
+
+
   return (
     <div>
       <div>
@@ -30,7 +32,7 @@ const SingleAssignment = ({ assign }) => {
               <div>
                 <h3 className="text-xl font-medium text-primary">{title}</h3>
                 <p className="text-sm text-slate-400"> Submit Date : {date}</p>
-                <h2 className="text-xl">{level}</h2>
+                <h2 className="text-xl">Method: {level}</h2>
               </div>
             </header>
 

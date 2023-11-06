@@ -13,14 +13,14 @@ const Details = () => {
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row">
+        <div className="hero-content  flex-col lg:flex-row">
          <div className="flex-1">
          <img
             src={image}
             className="w-full rounded-lg "
           />
          </div>
-          <div className="flex-1 ml-5">
+          <div className="flex-1 flex-grow  ml-5">
             <h1 className="text-5xl py-2 text-primary font-bold font-bold">{title}</h1>
             <p className=" text-tertiary py-2">
              {description}
