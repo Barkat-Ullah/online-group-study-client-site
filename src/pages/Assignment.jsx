@@ -7,6 +7,7 @@ import { useLoaderData } from "react-router-dom";
 const Assignment = () => {
   const [selectedLevel, setSelectedLevel] = useState("");
   const assignmentData = useLoaderData();
+  console.log(assignmentData);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 

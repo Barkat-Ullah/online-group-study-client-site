@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-// import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -11,11 +10,14 @@ import Update from "../pages/Update";
 import MyAssignments from "../pages/MyAssignments";
 import Home from "../pages/Home";
 import AllAssignments from "../pages/AllAssignments";
+import PrivateRouter from "./PrivateRouter";
+import ErrorElement from "../components/layout/ErrorElement";
 
 const router = createBrowserRouter([
     {
         path:'/',
         element:<App/>,
+        errorElement:<ErrorElement></ErrorElement>,
         children:[
             {
                 path:'/',
@@ -30,6 +32,7 @@ const router = createBrowserRouter([
             {
                 path:'assignment',
                 element:<Assignment></Assignment>,
+                loader:() => fetch('http://localhost:5000/assignments')
                
             },
             {
@@ -39,12 +42,12 @@ const router = createBrowserRouter([
             },
             {
                 path:'/details/:id',
-                element:<Details></Details>,
+                element:<PrivateRouter><Details></Details></PrivateRouter>,
                 loader:({params}) => fetch(`http://localhost:5000/assignments/${params.id}`)
             },
             {
                 path: '/update/:id',
-                element:<Update></Update>,
+                element:<PrivateRouter><Update></Update></PrivateRouter>,
                 loader:({params}) => fetch(`http://localhost:5000/assignments/${params.id}`)
             },
             {
