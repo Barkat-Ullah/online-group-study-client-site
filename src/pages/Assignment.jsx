@@ -7,7 +7,7 @@ import SingleAssignment from "./SingleAssignment";
 const Assignment = () => {
     const [assignmentData, setAssignmentData] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/assignments')
+        fetch('https://online-study-server.vercel.app')
         .then(res => res.json())
         .then(data => {
             console.log(data);

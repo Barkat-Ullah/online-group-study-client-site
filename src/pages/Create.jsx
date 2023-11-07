@@ -144,7 +144,7 @@ const Create = () => {
     };
 
     axios
-      .post("http://localhost:5000/assignments", assignmentData)
+      .post("https://online-study-server.vercel.app", assignmentData)
       .then((res) => {
         console.log(res.data)
         if(res.data.insertedId){
