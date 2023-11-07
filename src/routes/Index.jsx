@@ -13,6 +13,7 @@ import AllAssignments from "../pages/AllAssignments";
 import PrivateRouter from "./PrivateRouter";
 import ErrorElement from "../components/layout/ErrorElement";
 import TakeAssignment from "../pages/TakeAssignment";
+import Submit from "../pages/Submit";
 
 const router = createBrowserRouter([
     {
@@ -64,6 +65,11 @@ const router = createBrowserRouter([
                 path: 'takeAssignment/:id',
                 element: <PrivateRouter><TakeAssignment /></PrivateRouter>,
                 loader: ({ params }) => fetch(`http://localhost:5000/assignments/${params.id}`)
+              },
+              {
+                path:'submitted',
+                element:<Submit></Submit>,
+                loader:() => fetch('http://localhost:5000/quiz')
               }
               
         ]
