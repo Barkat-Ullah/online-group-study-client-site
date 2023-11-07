@@ -24,7 +24,7 @@ const TakeAssignment = () => {
         console.log(quizData);
 
         axios
-        .post("http://localhost:5000/quiz", quizData)
+        .post("https://online-study-server.vercel.app/quiz", quizData)
         .then((res) => {
           console.log(res.data)
           if(res.data.insertedId){
