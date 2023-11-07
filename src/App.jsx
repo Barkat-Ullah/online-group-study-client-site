@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom'
 import './App.css'
-import Footer from './components/layout/Footer'
+// import Footer from './components/layout/Footer'
 import Navbar from './components/layout/Navbar'
 
 
@@ -11,10 +11,8 @@ function App() {
      <Navbar></Navbar>
      <div className='max-w-6xl mx-auto'>
     <Outlet></Outlet>
-
      </div>
 
-      <Footer></Footer>
     </>
   )
 }

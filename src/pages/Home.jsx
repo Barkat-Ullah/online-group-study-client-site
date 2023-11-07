@@ -4,6 +4,7 @@ import Faq from "./Faq.jsx/Faq";
 import Team from "./Team";
 import Contact from "./Contact";
 import Assignment from "./Assignment";
+import Footer from "../components/layout/Footer";
 
 const Home = () => {
   return (
@@ -13,6 +14,8 @@ const Home = () => {
       <Faq></Faq>
       <Team></Team>
       <Contact></Contact>
+      
+      <Footer></Footer>
     </div>
   );
 };
