@@ -1,5 +1,4 @@
 
-
 import { useEffect, useState } from "react";
 import SingleAssignment from "./SingleAssignment";
 // import { useLoaderData } from "react-router-dom";
@@ -7,7 +6,7 @@ import SingleAssignment from "./SingleAssignment";
 const Assignment = () => {
     const [assignmentData, setAssignmentData] = useState([])
     useEffect(() => {
-        fetch('https://online-study-server.vercel.app')
+        fetch('http://localhost:5000')
         .then(res => res.json())
         .then(data => {
             console.log(data);
@@ -15,9 +14,11 @@ const Assignment = () => {
         })
     } ,[])
 
+    console.log(assignmentData);
+
   const [selectedLevel, setSelectedLevel] = useState("");
-//   const assignmentData = useLoaderData();
-  console.log(assignmentData);
+  // const assignmentData = useLoaderData();
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 

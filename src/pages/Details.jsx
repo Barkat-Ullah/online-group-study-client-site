@@ -69,7 +69,7 @@ export default Details;
 //     // Define a separate function to fetch assignment details
 //     const fetchAssignmentDetails = async () => {
 //       try {
-//         const response = await axios.get(`https://online-study-server.vercel.app/${id}`);
+//         const response = await axios.get(`http://localhost:5000/${id}`);
 //         setAssignmentDetails(response.data);
 //       } catch (err) {
 //         console.error('Error fetching assignment details:', err);

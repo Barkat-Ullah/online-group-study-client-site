@@ -40,17 +40,17 @@ const router = createBrowserRouter([
             {
                 path:'myAssignment',
                 element:<MyAssignments></MyAssignments>,
-                loader:() => fetch('https://online-study-server.vercel.app')
+                loader:() => fetch('http://localhost:5000')
             },
             {
                 path:'/details/:id',
                 element:<PrivateRouter><Details></Details></PrivateRouter>,
-                loader:({params}) => fetch(`https://online-study-server.vercel.app/${params.id}`)
+                loader:({params}) => fetch(`http://localhost:5000/${params.id}`)
             },
             {
                 path: '/update/:id',
                 element:<PrivateRouter><Update></Update></PrivateRouter>,
-                loader:({params}) => fetch(`https://online-study-server.vercel.app/${params.id}`)
+                loader:({params}) => fetch(`http://localhost:5000/${params.id}`)
             },
             {
                 path:'create',
@@ -64,12 +64,12 @@ const router = createBrowserRouter([
             {
                 path: 'takeAssignment/:id',
                 element: <PrivateRouter><TakeAssignment /></PrivateRouter>,
-                loader: ({ params }) => fetch(`https://online-study-server.vercel.app/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`)
               },
               {
                 path:'submitted',
                 element:<Submit></Submit>,
-                loader:() => fetch('https://online-study-server.vercel.app/quiz')
+                loader:() => fetch('http://localhost:5000/quiz')
               }
               
         ]

@@ -9,7 +9,7 @@ const Submit = () => {
 
   useEffect(() => {
 
-    axios.get("https://online-study-server.vercel.app/quiz")
+    axios.get("http://localhost:5000/quiz")
       .then((response) => {
         setQuizes(response.data);
       })
@@ -28,7 +28,7 @@ const Submit = () => {
     };
   
     axios
-      .patch(`https://online-study-server.vercel.app/quiz/${id}`, quizData)
+      .patch(`http://localhost:5000/quiz/${id}`, quizData)
       .then((res) => {
         console.log(res.data);
         

@@ -4,8 +4,6 @@ const SingleAssignment = ({ assign }) => {
   const { _id, title, level, marks, image, date, description } = assign || "";
   console.log(assign);
 
-
-
   return (
     <div>
       <div>
