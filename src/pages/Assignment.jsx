@@ -1,12 +1,22 @@
 
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SingleAssignment from "./SingleAssignment";
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 
 const Assignment = () => {
+    const [assignmentData, setAssignmentData] = useState([])
+    useEffect(() => {
+        fetch('http://localhost:5000/assignments')
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            setAssignmentData(data)
+        })
+    } ,[])
+
   const [selectedLevel, setSelectedLevel] = useState("");
-  const assignmentData = useLoaderData();
+//   const assignmentData = useLoaderData();
   console.log(assignmentData);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
@@ -44,7 +54,7 @@ const Assignment = () => {
       </p>
 
       <div className="flex items-center my-4 justify-end">
-        <select
+         <select
           className="select select-info max-w-xs"
           onChange={(e) => setSelectedLevel(e.target.value)}
           value={selectedLevel}
@@ -55,15 +65,15 @@ const Assignment = () => {
           <option value="easy">Easy</option>
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
-        </select>
+        </select> 
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5">
         {currentAssignments?.map((assign) => (
           <SingleAssignment key={assign._id} assign={assign}></SingleAssignment>
         ))}
-      </div>
-      <div className="flex justify-end items-center gap-2 my-8">
+      </div> 
+       <div className="flex justify-end items-center gap-2 my-8">
         <button className=" btn btn-outline btn-info" onClick={handlePreviousPage}>
           Prev
         </button>

@@ -12,6 +12,7 @@ import Home from "../pages/Home";
 import AllAssignments from "../pages/AllAssignments";
 import PrivateRouter from "./PrivateRouter";
 import ErrorElement from "../components/layout/ErrorElement";
+import TakeAssignment from "../pages/TakeAssignment";
 
 const router = createBrowserRouter([
     {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:() => fetch('http://localhost:5000/assignments')
+            
                 
             },
             {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
             {
                 path:'assignment',
                 element:<Assignment></Assignment>,
-                loader:() => fetch('http://localhost:5000/assignments')
+           
                
             },
             {
@@ -58,7 +59,13 @@ const router = createBrowserRouter([
             {
                 path:'contact',
                 element:<Contact></Contact>
-            }
+            },
+            {
+                path: 'takeAssignment/:id',
+                element: <PrivateRouter><TakeAssignment /></PrivateRouter>,
+                loader: ({ params }) => fetch(`http://localhost:5000/assignments/${params.id}`)
+              }
+              
         ]
     },
     {

@@ -1,34 +1,52 @@
+/* eslint-disable react/no-unknown-property */
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider/AuthProvider";
 
 const Details = () => {
   const details = useLoaderData();
   const { _id, title, level, marks, image, date, description } = details;
 
-  const {user} = useContext(AuthContext)
-  const newDetails = {user:user?.email,  _id, title, level, marks, image, date, description }
+  const { user } = useContext(AuthContext);
+  const newDetails = {
+    user: user?.email,
+    _id,
+    title,
+    level,
+    marks,
+    image,
+    date,
+    description,
+  };
   console.log(newDetails);
 
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content  flex-col lg:flex-row">
-         <div className="flex-1">
-         <img
-            src={image}
-            className="w-full rounded-lg "
-          />
-         </div>
+          <div className="flex-1">
+            <img src={image} className="w-full rounded-lg " />
+          </div>
           <div className="flex-1 flex-grow  ml-5">
-            <h1 className="text-5xl py-2 text-primary font-bold font-bold">{title}</h1>
-            <p className=" text-tertiary py-2">
-             {description}
-            </p>
-            <h2 className="text-xl py-2 text-primary">Assignment submit time: {date}</h2>
-            <h2 className="text-xl py-2 text-primary">Gained: <span className="text-sky-400">{marks}</span></h2>
-            <h2 className="text-xl pt-2 pb-3 text-primary">Assignment Position: {level}</h2>
-            <button className="btn btn-primary">Get Started</button>
+            <h1 className="text-5xl py-2 text-primary font-bold font-bold">
+              {title}
+            </h1>
+            <p className=" text-tertiary py-2">{description}</p>
+            <h2 className="text-xl py-2 text-primary">
+              Assignment submit time: {date}
+            </h2>
+            <h2 className="text-xl py-2 text-primary">
+              Gained: <span className="text-sky-400">{marks}</span>
+            </h2>
+            <h2 className="text-xl pt-2 pb-3 text-primary">
+              Assignment Position: {level}
+            </h2>
+
+            <Link to={`/takeAssignment/${_id}`}>
+              <button className="btn bg-gradient-to-r from-sky-400 to-blue-500 hover:from-blue-500 hover:to-sky-500 transition delay-150, duration-700, ease-in-out text-white">
+                Take an Assignment
+              </button>
+            </Link>
           </div>
         </div>
       </div>
