@@ -6,9 +6,13 @@ import NoData from "./NoData";
 
 const MyAssignments = () => {
     const myAssign = useLoaderData();
-    console.log(myAssign);
+    console.log( myAssign);
+
+    // const myAssignObject = JSON.parse(myAssign);
+    // console.log('obj', myAssignObject);
+
     const { user } = useContext(AuthContext);
-    const userAssign = myAssign.filter(myAssignment => myAssignment.user == user?.email);
+    const userAssign = myAssign?.filter(myAssignment => myAssignment.user == user?.email);
     const [removes, setRemoves] = useState(userAssign);
     console.log(userAssign);
 
@@ -28,3 +32,6 @@ const MyAssignments = () => {
 };
 
 export default MyAssignments;
+
+
+
