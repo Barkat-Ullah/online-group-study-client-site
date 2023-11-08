@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../provider/AuthProvider/AuthProvider";
 
 const TakeAssignment = () => {
+  const navigate = useNavigate()
     const data = useLoaderData()
     console.log(data);
     const {title, marks} = data;
@@ -35,6 +36,7 @@ const TakeAssignment = () => {
                   confirmButtonText: 'Cool'
                 })
           }
+          navigate('/submitted')
         });
     }
 

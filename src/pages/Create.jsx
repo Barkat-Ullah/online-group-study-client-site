@@ -125,8 +125,11 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
+
 
 const Create = () => {
+  const navigate = useNavigate()
     const {user} = useContext(AuthContext)
   const handleSubmit =(event)=> {
     event.preventDefault();
@@ -144,7 +147,7 @@ const Create = () => {
     };
 
     axios
-      .post("https://online-study-server.vercel.app", assignmentData)
+      .post("https://online-study-server.vercel.app/assignments", assignmentData)
       .then((res) => {
         console.log(res.data)
         if(res.data.insertedId){
@@ -155,6 +158,8 @@ const Create = () => {
                 confirmButtonText: 'Cool'
               })
         }
+        navigate('/allAssignment')
+
       });
 
  
