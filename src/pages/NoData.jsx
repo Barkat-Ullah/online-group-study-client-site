@@ -21,7 +21,7 @@ const NoData = () => {
                <Link to='/create'>
                    
                 <button className="w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-sky-500 rounded-lg shrink-0 sm:w-auto hover:bg-sky-600 dark:hover:bg-sky-500 dark:bg-sky-600">
-                    Take me home
+                    Take An Assignment
                 </button>
                </Link>
             </div>

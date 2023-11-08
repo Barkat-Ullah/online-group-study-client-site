@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import app from "../../config/firebase.config";
 import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 
@@ -10,6 +10,15 @@ const githubProvider = new GithubAuthProvider()
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null)
     const [loader, setLoader] = useState(true)
+    const [theme, setTheme] = React.useState('light');
+    const toggleTheme = () => {
+      setTheme(theme === 'dark' ? 'light' : 'dark');
+    };
+    
+    React.useEffect(() => {
+      document.querySelector('html').setAttribute('data-theme', theme);
+    }, [theme]);
+  
 
     const createUser = (email, password) => {
         setLoader(true)
@@ -46,7 +55,7 @@ const AuthProvider = ({children}) => {
         }
     },[])
 
-    const authInfo = {user,loader, createUser, logOut, signIn, googleSign, githubSign }
+    const authInfo = {user,loader,toggleTheme, createUser, logOut, signIn, googleSign, githubSign }
 
     return (
         <AuthContext.Provider value={authInfo}>

@@ -47,12 +47,12 @@ const router = createBrowserRouter([
             {
                 path:'/details/:id',
                 element:<PrivateRouter><Details></Details></PrivateRouter>,
-                loader:({params}) => fetch(`https://online-study-server.vercel.app/${params.id}`)
+                loader:({params}) => fetch(`https://online-study-server.vercel.app/assignments/${params.id}`)
             },
             {
                 path: '/update/:id',
                 element:<PrivateRouter><Update></Update></PrivateRouter>,
-                loader:({params}) => fetch(`https://online-study-server.vercel.app/${params.id}`)
+                loader:({params}) => fetch(`https://online-study-server.vercel.app/assignments/${params.id}`)
             },
             {
                 path:'create',

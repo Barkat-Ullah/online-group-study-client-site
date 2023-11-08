@@ -17,7 +17,7 @@ const MyAssignments = () => {
     console.log(userAssign);
 
     return (
-        <div className="my-32">
+        <div className="my-16 md:my-32">
             {removes.length === 0 ? (
                 <NoData></NoData>
             ) : (

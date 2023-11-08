@@ -5,12 +5,12 @@ const Banner = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="flex-1">
           <img
-            src="https://i.ibb.co/cvL4mFN/ai-home-hero.webp"
+            src="https://i.ibb.co/Y8BvSGb/financial-literacy-education-flat-vector-illustration-young-people-learning-how-trade-cryptocurrency.jpg"
             className="w-full h-[350px] rounded-lg "
           />
           </div>
           <div className="flex-1">
-            <h1 className="text-5xl text-primary font-bold">
+            <h1 className="text-2xl md:text-5xl text-primary font-bold">
               Pluralsight empowers you to <span className="text-sky-400">upgrade your skills</span>
             </h1>
             <p className="py-6 text-tertiary">

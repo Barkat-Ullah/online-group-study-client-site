@@ -116,13 +116,13 @@ const Navbar = () => {
                   {links}
                 </ul>
               </div>
-              <div className="flex justify-center items-center gap-3">
+              <div className="sm:ml-2 flex justify-center items-center gap-3">
                 <img
                   className="w-10 h-10 sm:pl-16 md:w-28 md:h-12"
                   src="https://i.ibb.co/0QppzSv/PS.png"
                   alt=""
                 />
-                <span className="text-2xl font-bold text-pink">PLURALSIGHT</span>
+                <span className="text-sm md:text-2xl font-bold text-pink">PLURALSIGHT</span>
                 
   
                 {/* <input

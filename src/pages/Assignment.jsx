@@ -5,6 +5,8 @@ import SingleAssignment from "./SingleAssignment";
 
 const Assignment = () => {
     const [assignmentData, setAssignmentData] = useState([])
+
+
     useEffect(() => {
         fetch('https://online-study-server.vercel.app/assignments')
         .then(res => res.json())
@@ -13,6 +15,8 @@ const Assignment = () => {
             setAssignmentData(data)
         })
     } ,[])
+    
+  
 
     console.log(assignmentData);
 
@@ -45,7 +49,7 @@ const Assignment = () => {
 
   return (
     <div className="">
-      <h2 className="mt-24 text-center font-semibold text-primary text-4xl">
+      <h2 className="mt-24 text-center font-semibold text-primary text-xl md:text-4xl">
         Quiz test Assignment
       </h2>
       <p className="mt-2 mb-2 text-center font-medium text-tertiary">
