@@ -1,5 +1,4 @@
 
-
 import  { useState, useEffect } from "react";
 import axios from "axios";
 import Quiz from "./Quiz";
@@ -41,6 +40,32 @@ const Submit = () => {
         console.error("Error updating quiz: ", error);
       });
   };
+
+  // const handleQuiz = (e, id) => {
+  //   e.preventDefault();
+  //   const formData = new FormData(e.target);
+  //   const newMarks = formData.get("marks");
+  
+  //   const quizData = {
+  //     marks: newMarks,
+  //     status: "completed", // Set status to "completed"
+  //   };
+  
+  //   axios
+  //     .patch(`https://online-study-server.vercel.app/quiz/${id}`, quizData)
+  //     .then((res) => {
+  //       console.log(res.data);
+  
+  //       const updatedQuizes = quizes.map((quiz) =>
+  //         quiz._id === id ? { ...quiz, marks: newMarks, status: "completed" } : quiz
+  //       );
+  //       setQuizes(updatedQuizes);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error updating quiz: ", error);
+  //     });
+  // };
+  
   
 
   return (

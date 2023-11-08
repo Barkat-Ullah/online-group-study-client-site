@@ -21,7 +21,7 @@ const Quiz = ({ quiz, handleQuiz  }) => {
       <td>{email}</td>
       <td>{title}</td>
       <td>{link}</td>
-      <td></td>
+      <td>Pending</td>
       <td>{marks}</td>
 
       <button
@@ -54,3 +54,6 @@ const Quiz = ({ quiz, handleQuiz  }) => {
 };
 
 export default Quiz;
+
+Quiz.js
+
