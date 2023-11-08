@@ -1,4 +1,5 @@
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import SingleAssignment from "./SingleAssignment";
 // import { useLoaderData } from "react-router-dom";
@@ -6,6 +7,9 @@ import SingleAssignment from "./SingleAssignment";
 const Assignment = () => {
     const [assignmentData, setAssignmentData] = useState([])
 
+    useEffect(() => {
+      AOS.init();
+    }, []);
 
     useEffect(() => {
         fetch('https://online-study-server.vercel.app/assignments')
@@ -73,7 +77,8 @@ const Assignment = () => {
         </select> 
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5">
+      <div data-aos="fade-up"
+     data-aos-anchor-placement="top-bottom" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-5">
         {currentAssignments?.map((assign) => (
           <SingleAssignment key={assign._id} assign={assign}></SingleAssignment>
         ))}
