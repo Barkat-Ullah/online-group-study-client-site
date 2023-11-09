@@ -9,6 +9,7 @@ const TakeAssignment = () => {
     const data = useLoaderData()
     console.log(data);
     const {title, marks} = data;
+    console.log(title, marks);
     const {user} = useContext(AuthContext)
 
     const handleQuizSubmit = e => {
