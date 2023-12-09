@@ -24,7 +24,7 @@ const Update = () => {
     };
 
     axios
-      .put(`https://online-study-server.vercel.app/${_id}`, assignmentData)
+      .put(`https://online-study-server.vercel.app/assignments/${_id}`, assignmentData)
       .then((res) => {
         console.log(res.data);
         if (res.data.modifiedCount > 0) {
