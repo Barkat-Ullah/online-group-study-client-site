@@ -83,6 +83,7 @@ const Assignment = () => {
           <SingleAssignment key={assign._id} assign={assign}></SingleAssignment>
         ))}
       </div> 
+
        <div className="flex justify-end items-center gap-2 my-8">
         <button className=" btn btn-outline btn-info" onClick={handlePreviousPage}>
           Prev
@@ -91,6 +92,7 @@ const Assignment = () => {
           Next
         </button>
       </div>
+      
     </div>
   );
 };
